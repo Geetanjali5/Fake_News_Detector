@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fake News Detector</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<!-- Navbar Start -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container">
+    <!-- Logo -->
+    <a class="navbar-brand" href="#home">
+    <img src="{{ url_for('static', filename='images/logo.png') }}"alt="Logo" height="85" width="100" style="padding-left: 15px;">    
+    </a>
+
+    <!-- Toggle button for mobile -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+<!-- Navbar Links -->
+    <div class="collapse navbar-collapse" id="mainNavbar">
+      <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" href="#home">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#about">About Us</a>
+        </li>
+<!-- Dropdown -->
+   <li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" href="#" id="servicesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+      Our Services
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="servicesDropdown">
+      <li><a class="dropdown-item" href="#services">Service 1</a></li>
+      <li><a class="dropdown-item" href="#services">Service 2</a></li>
+      <li><a class="dropdown-item" href="#services">Service 3</a></li>
+    </ul>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="#check-news">Check</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="#contact">Contact Us</a>
+  </li>
+</ul>
+<!-- Get Started Button -->
+    <div class="d-flex">
+      <a href="#check-news" class="btn btn-primary">Get Started</a>
+      </div>
+    </div>
+  </div>
+</nav>
+<!-- Navbar End -->
+<!-- Hero Section Start -->
+<section id="home">
+  <div id="heroCarousel" class="carousel slide carousel-fade mt-4" data-bs-ride="carousel">
+    
+    <!-- Indicators -->
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active"></button>
+      <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1"></button>
+      <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2"></button>
+    </div>
+
+<!--home Start -->
+<div id="heroCarousel" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-inner text-center align-items-center">
+
+    <!-- Slide 1 -->
+    <div class="carousel-item active slide slide-1">
+      <div class="overlay"></div>
+      <div class="carousel-caption text-white">
+  
+        <p class="lead">
+          Protect yourself from misinformation with our advanced detection system.<br>
+          Real-time analysis powered by AI.
+        </p>
+      </div>
+    </div>
+
+    <!-- Slide 2 -->
+    <div class="carousel-item slide slide-2">
+      <div class="overlay"></div>
+      <div class="carousel-caption text-white">
+         <p class="lead">
+          Submit any news content and get fast, reliable analysis.<br>
+          Know the truth before you share.
+        </p>
+      </div>
+    </div>
+
+    <!-- Slide 3 -->
+    <div class="carousel-item slide slide-3">
+      <div class="overlay"></div>
+      <div class="carousel-caption text-white">
+        <p class="lead">
+          Backed by machine learning and data science.<br>
+          Accuracy you can trust.
+        </p>
+      </div>
+    </div>
+
+  </div>
+
+    <!-- Controls -->
+    <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon"></span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+      <span class="carousel-control-next-icon"></span>
+    </button>
+  </div>
+</section>
+<!--home End -->
+
+<!-- About Section Start -->
+<section class="py-5" id="about">
+  <div class="container">
+    <div class="row align-items-center">
+
+      <!-- Left Side Content -->
+      <div class="col-md-6">
+        <h6 class="text-primary mb-3">ABOUT US</h6>
+
+        <!-- Tabs -->
+        <ul class="nav nav-tabs mb-3" id="aboutTabs" role="tablist">
+          <li class="nav-item" role="presentation">
+            <button class="nav-link active" id="company-tab" data-bs-toggle="tab" data-bs-target="#company" type="button" role="tab">Our Company</button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link" id="mission-tab" data-bs-toggle="tab" data-bs-target="#mission" type="button" role="tab">Our Mission</button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link" id="vision-tab" data-bs-toggle="tab" data-bs-target="#vision" type="button" role="tab">Our Vision</button>
+          </li>
+        </ul>
+
+        <!-- Tab Content -->
+        <div class="tab-content show active" id="aboutTabsContent">
+          <div class="tab-pane fade show active" id="company" role="tabpanel">
+            <h3>Reliable Fake News Detection</h3>
+            <p>Our company builds powerful AI tools to combat misinformation. We use advanced Natural Language Processing and Machine Learning models to help people verify the authenticity of online news.</p>
+           <a href="#" class="btn btn-outline-primary mt-2" data-bs-toggle="modal" data-bs-target="#learnMoreModal">
+  Learn More
+</a>
+          </div>
+
+        <!-- MISSION Tab -->
+          <div class="tab-pane fade" id="mission" role="tabpanel">
+          <h3 class="fw-bold">Empowering Truth</h3>
+          <p> Our mission is to empower individuals and organizations with the tools to detect and confront fake news.  
+           we aim to promote digital literacy and ensure that everyone has access to truthful, reliable information in the online world.
+          </p>
+          <a href="#" class="btn btn-outline-primary mt-2" data-bs-toggle="modal" data-bs-target="#missionModal">Learn More</a>
+
+          </div>
+
+          <!-- VISION Tab -->
+          <div class="tab-pane fade" id="vision" role="tabpanel">
+            <h3 class="fw-bold">A Future Free from Misinformation</h3>
+            <p>
+              We envision a digital space where every piece of news can be trusted. Our vision is to be the global standard in fake news detection technology, accessible to everyone.
+            </p>
+            <a href="#" class="btn btn-outline-primary mt-2" data-bs-toggle="modal" data-bs-target="#visionModal">Learn More</a>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Right Side Image -->
+      <div class="col-md-6 text-center">
+        <img src="{{ url_for('static', filename='images/p4.png') }}"alt="News Detector" class="img-fluid rounded shadow">
+      </div>
+
+    </div>
+  </div>
+</section>
+<!-- About Section End -->
+
+<!-- Our Services Section Start -->
+<section class="py-5 bg-light" id="services">
+  <div class="container text-center">
+    <h2 class="mb-3">Our Services</h2>
+    <p class="mb-5 text-muted">
+      We provide a range of tools and technologies designed to identify, analyze, and respond to misinformation online. Our AI models work to ensure accuracy and trust in digital media.
+    </p>
+
+    <div class="row g-4">
+      
+      <!-- Service 1 -->
+      <div class="col-md-4">
+        <div class="card h-100 border-0 shadow text-center p-4">
+          <div class="service-icon mb-3">
+            <i class="fas fa-search fa-2x text-primary"></i>
+          </div>
+          <h5>Service 1</h5>
+          <p class="text-muted">Analyze news articles using machine learning to detect misleading content instantly and accurately.</p>
+        </div>
+      </div>
+
+      <!-- Service 2 -->
+      <div class="col-md-4">
+        <div class="card h-100 border-0 shadow text-center p-4">
+          <div class="service-icon mb-3">
+            <i class="fas fa-shield-alt fa-2x text-success"></i>
+          </div>
+          <h5>Service 2</h5>
+          <p class="text-muted">Protect users from fake news using real-time monitoring and content verification systems.</p>
+        </div>
+      </div>
+
+      <!-- Service 3 -->
+      <div class="col-md-4">
+        <div class="card h-100 border-0 shadow text-center p-4">
+          <div class="service-icon mb-3">
+            <i class="fas fa-robot fa-2x text-danger"></i>
+          </div>
+          <h5>Service 3</h5>
+          <p class="text-muted">Enable users to detect fake news directly while browsing the web by offering a lightweight browser extension </p>
+        </div>
+      </div>
+
+      <!-- Service 4 -->
+      <div class="col-md-4">
+        <div class="card h-100 border-0 shadow text-center p-4">
+          <div class="service-icon mb-3">
+            <i class="fas fa-chart-line fa-2x text-warning"></i>
+          </div>
+          <h5>Service 4</h5>
+          <p class="text-muted">Generate detailed reports and analytics on media credibility for academic or commercial use.</p>
+        </div>
+      </div>
+
+      <!-- Service 5 -->
+      <div class="col-md-4">
+        <div class="card h-100 border-0 shadow text-center p-4">
+          <div class="service-icon mb-3">
+            <i class="fas fa-bullhorn fa-2x text-info"></i>
+          </div>
+          <h5>Service 5</h5>
+          <p class="text-muted">Send real-time alerts when fake news is detected, helping you stay one step ahead of misinformation.</p>
+        </div>
+      </div>
+
+      <!-- Service 6 -->
+      <div class="col-md-4">
+        <div class="card h-100 border-0 shadow text-center p-4">
+          <div class="service-icon mb-3">
+            <i class="fas fa-globe fa-2x text-secondary"></i>
+          </div>
+          <h5>Service 6</h5>
+          <p class="text-muted">Integrate our API into your platform to auto-detect fake news from multiple sources globally.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+<!-- Our Services Section End -->
+
+<!-- Check News Authenticity Section -->
+<div class="container py-5" id="check-news">
+  <h2 class="text-center fw-bold">Fake News Detector</h2>
+
+  <!-- Dropdown -->
+  <select id="sampleSelect" class="form-select mb-3">
+    <option selected disabled>Select a news headline</option>
+    {% for item in samples %}
+      <option value="{{ item.text|e }}">{{ item.title }}</option>
+    {% endfor %}
+  </select>
+
+  <!-- Button -->
+  <div class="text-center">
+    <button onclick="checkSelectedNews()" class="btn btn-primary">Check News</button>
+  </div>
+
+  <!-- Result -->
+  <div id="result" class="text-center mt-4 fs-5 fw-bold"></div>
+</div>
+
+<!-- JavaScript code -->
+<script>
+function checkSelectedNews() {
+  const select = document.getElementById('sampleSelect');
+  const selectedText = select.value;
+
+  if (!selectedText || select.selectedIndex === 0) {
+    document.getElementById('result').innerText = "Please select a news headline.";
+    return;
+  }
+
+  document.getElementById('result').innerText = "Checking...";
+
+  fetch('/api/predict', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ text: selectedText })
+  })
+  .then(response => response.json())
+  .then(data => {
+    document.getElementById('result').innerText = "Prediction: " + data.result;
+    document.getElementById('result').style.color = (data.result === "Fake News") ? "red" : "green";
+  })
+  .catch(error => {
+    console.error("Error:", error);
+    document.getElementById('result').innerText = "Error checking news.";
+  });
+}
+</script>
+
+<!-- Contact Section Start -->
+<section id="contact" class="py-5 bg-white">
+  <div class="container">
+    <div class="text-center mb-5">
+      <h2>Contact Us</h2>
+      <p class="text-muted">Feel free to reach out with your queries.</p>
+    </div>
+
+    <div class="row g-5">
+     <!-- Contact Form -->
+<div class="col-md-6">
+  <form action="/submit_form" method="POST" class="p-4 shadow rounded bg-white">
+
+    <!-- Name -->
+    <div class="mb-3">
+      <label for="name" class="form-label fw-semibold">Full Name</label>
+      <input type="text" name="name" id="name" class="form-control rounded-3 shadow-sm" placeholder="Enter your full name" required>
+    </div>
+
+    <!-- Email -->
+    <div class="mb-3">
+      <label for="email" class="form-label fw-semibold">Email Address</label>
+      <input type="email" name="email" id="email" class="form-control rounded-3 shadow-sm" placeholder="you@example.com" required>
+    </div>
+
+    <!-- Subject -->
+    <div class="mb-3">
+      <label for="subject" class="form-label fw-semibold">Subject</label>
+      <select name="subject" id="subject" class="form-select rounded-3 shadow-sm" required>
+        <option value="" disabled selected> Choose a topic...</option>
+        <option value="Fake News Query">📰 Fake News Query</option>
+        <option value="Technical Support">🛠 Technical Support</option>
+        <option value="Partnership">🤝 Partnership</option>
+        <option value="General Inquiry">❓ General Inquiry</option>
+      </select>
+    </div>
+
+    <!-- Message -->
+    <div class="mb-3">
+      <label for="message" class="form-label fw-semibold">Your Message</label>
+      <textarea name="message" id="message" class="form-control rounded-3 shadow-sm" rows="5" placeholder="Write your message here..." required></textarea>
+    </div>
+
+    <!-- Submit -->
+    <div class="d-grid">
+      <button type="submit" class="btn btn-primary btn-lg rounded-pill shadow-sm">Send Message</button>
+    </div>
+
+  </form>
+</div>
+
+      <!-- Google Map -->
+      <div class="col-md-6">
+        <div class="map-responsive rounded shadow">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.019878992749!2d-122.42004988468127!3d37.77928057975712!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8085809c5a55856d%3A0x65cc0ec1cfa07f71!2sTwitter%20HQ!5e0!3m2!1sen!2sin!4v1633511947211!5m2!1sen!2sin"
+            width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+
+      <form method="POST" action="/contact">
+        <!-- (form fields same as before) -->
+      </form>
+
+
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Contact Section End -->
+
+<!-- Footer Start -->
+<footer class="bg-light text-black pt-5 pb-3 mt-5">
+  <div class="container">
+    <div class="row">
+
+      <!-- About Us -->
+      <div class="col-md-4 mb-4">
+        <h5 class="text-uppercase mb-3">About Us</h5>
+        <p>Fake Finder is an AI-powered fake news detection platform dedicated to helping users verify news whether it is real or fake</p>
+      </div>
+
+      <!-- Quick Links -->
+      <div class="col-md-4 mb-4 ">
+        <h5 class="text-uppercase mb-3">Quick Links</h5>
+        <ul class="list-unstyled">
+          <li><a href="#heroCarousel" class="text-black text-decoration-none">Home</a></li>
+          <li><a href="#about" class="text-black text-decoration-none">About Us</a></li>
+          <li><a href="#services" class="text-black text-decoration-none">Our Services</a></li>
+          <li><a href="#check-news" class="text-black text-decoration-none">Check News</a></li>
+          <li><a href="#contact" class="text-black text-decoration-none">Contact Us</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact Us -->
+      <div class="col-md-4 mb-4">
+        <h5 class="text-uppercase mb-3">Contact Us</h5>
+        <p class="mb-1"><i class="fas fa-envelope me-2"></i>support@fakefinder.com</p>
+        <p class="mb-1"><i class="fas fa-phone me-2"></i>+91-9876543210</p>
+        <p><i class="fas fa-map-marker-alt me-2"></i>Panipat, Haryana, India</p>
+      </div>
+    </div>
+    <hr class="border-dark" />
+    <div class="text-center mt-3">
+      <p class="mb-0">&copy; 2025 <strong>Fake Finder</strong>. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+<!-- Footer End -->
+
+<!-- Scripts -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+<!-- Bootstrap Bundle JS (includes Popper) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+<!-- Learn More Modal -->
+ <!--Company Modal-->
+<div class="modal fade" id="learnMoreModal" tabindex="-1" aria-labelledby="learnMoreLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content border-0 shadow rounded-4">
+      <div class="modal-header bg-primary text-white">
+        <h5 class="modal-title" id="learnMoreLabel">About Our Company & Fake News Detection</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+   <div class="modal-body p-4">
+  <p>
+    <strong>We build AI tools</strong> to fight misinformation and promote truth in the digital world. Our mission is to deliver fast, reliable news verification for all.
+  </p>
+  <p>
+    Using advanced <strong>NLP</strong> and <strong>Machine Learning</strong>, our system detects and classifies news as 
+    <span class="fw-bold text-success">Real</span> or <span class="fw-bold text-danger">Fake</span>.
+  </p>
+  <ul class="mt-3">
+    <li>✅ Detects fake news using linguistic patterns</li>
+    <li>✅ Built with Logistic Regression + TF-IDF</li>
+    <li>✅ Trained on real-world news data</li>
+  </ul>
+  <p class="mt-3">
+    Trusted by readers, educators, and developers to ensure safer online information.
+  </p>
+</div>
+      <div class="modal-footer">
+        <button class="btn btn-outline-secondary rounded-pill" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Mission Modal -->
+<div class="modal fade" id="missionModal" tabindex="-1" aria-labelledby="missionModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content rounded-4">
+      <div class="modal-header bg-primary text-white">
+        <h5 class="modal-title" id="missionModalLabel">Our Mission</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body p-4">
+        <p>
+          At the core of our mission lies a commitment to <strong>empower every individual</strong> with the ability to differentiate between truth and deception online.
+        </p>
+        <ul>
+          <li>✅ Promote awareness against misinformation</li>
+          <li>✅ Enable fast and accurate verification of online news</li>
+          <li>✅ Provide user-friendly tools built on cutting-edge AI & NLP</li>
+        </ul>
+        <p>
+          Through innovation and education, we hope to strengthen society’s resistance to digital misinformation.
+        </p>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-outline-secondary rounded-pill" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Vision Modal -->
+<div class="modal fade" id="visionModal" tabindex="-1" aria-labelledby="visionModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content rounded-4">
+      <div class="modal-header bg-primary text-white">
+        <h5 class="modal-title" id="visionModalLabel">Our Vision</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body p-4">
+        <p>
+          We envision a world where <strong>every piece of digital content is credible</strong>, and users are no longer misled by false narratives.
+        </p>
+        <ul>
+          <li>🌐 Becoming the standard in global news verification</li>
+          <li>🔍 Developing multilingual fake news detection models</li>
+          <li>📲 Integrating our tools with major platforms and browsers</li>
+          <li>🧠 Promoting transparency and ethical AI usage</li>
+        </ul>
+        <p>
+          Together, we believe we can build a digital future free from the harm of misinformation.
+        </p>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-outline-secondary rounded-pill" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+</html>

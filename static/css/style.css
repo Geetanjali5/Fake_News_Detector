@@ -1,0 +1,113 @@
+/* Make hero shorter and stylish */
+/* Common styles for all slides */
+
+/* General Slide Style */
+.slide-1, .slide-2, .slide-3 {
+  height: 75vh;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+/* Slide Backgrounds */
+.slide-1 {
+  background-image: url("../images/p3.png");
+}
+.slide-2 {
+  background-image: url("../images/bg.png");
+}
+.slide-3 {
+  background-image: url("../images/p2.png");
+}
+
+/* Overlay */
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Text on slides */
+.carousel-caption {
+  position: relative;
+  z-index: 2;
+  top: 50%;
+  transform: translateY(-50%);
+  color: white;
+  text-align: center;
+   align-items: center;
+  justify-content: center;
+  text-shadow: 2px 2px 10px #000;
+}
+
+.carousel-caption h1 {
+padding-left: 5px;
+  text-align: center;
+   align-items: center;
+  justify-content: center;
+  font-size: 2.5rem;
+}
+.carousel-caption p {
+  font-size: 1.1rem;
+  max-width: 700px;
+  padding-left: 22%;
+}
+.btn-primary {
+  border-radius: 25px;
+  padding: 10px 25px;
+}
+#about h6 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #007bff;
+}
+#about h3 {
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+#about .btn-outline-primary {
+  border-radius: 20px;
+  padding: 8px 20px;
+}
+#services h2 {
+  font-weight: 700;
+}
+#services .card {
+  transition: transform 0.3s ease;
+}
+#services .card:hover {
+  transform: translateY(-8px);
+}
+.service-icon i {
+  display: inline-block;
+  margin-bottom: 10px;
+}
+.map-responsive {
+  overflow: hidden;
+  padding-bottom: 56.25%;
+  position: relative;
+  height: 0;
+}
+
+.map-responsive iframe {
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  border-radius: 10px;
+}
+
+#contact h2 {
+  font-weight: 700;
+}
+
+#contact .form-control,
+#contact .form-select {
+  border-radius: 8px;
+}
