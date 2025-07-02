@@ -1,49 +1,44 @@
 /* Make hero shorter and stylish */
 /* Common styles for all slides */
+body {
+  background-color: #f8f9fa;
+  font-family: 'Poppins', sans-serif;
+}
 
-/* General Slide Style */
-.slide-1, .slide-2, .slide-3 {
+/* Hero Carousel */
+.carousel-item {
   height: 75vh;
   background-size: cover;
   background-position: center;
   position: relative;
 }
 
-/* Slide Backgrounds */
 .slide-1 {
-  background-image: url("../images/p3.png");
-}
-.slide-2 {
-  background-image: url("../images/bg.png");
-}
-.slide-3 {
-  background-image: url("../images/p2.png");
+  background-image: url("/static/images/p3.png");
 }
 
-/* Overlay */
+.slide-2 {
+  background-image: url("/static/images/bg.png");
+}
+
+.slide-3 {
+  background-image: url("/static/images/p2.png");
+}
+
 .overlay {
   position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
   z-index: 1;
-  pointer-events: none;
 }
 
-/* Text on slides */
 .carousel-caption {
-  position: relative;
   z-index: 2;
-  top: 50%;
-  transform: translateY(-50%);
-  color: white;
-  text-align: center;
-   align-items: center;
-  justify-content: center;
-  text-shadow: 2px 2px 10px #000;
+  color: #fff;
+  padding: 1rem;
 }
+
 
 .carousel-caption h1 {
 padding-left: 5px;
@@ -56,6 +51,7 @@ padding-left: 5px;
   font-size: 1.1rem;
   max-width: 700px;
   padding-left: 22%;
+  text-align: center;
 }
 .btn-primary {
   border-radius: 25px;

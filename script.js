@@ -20,6 +20,15 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   // ✅ Initialize Carousel with options
+  const carousel = document.getElementById("heroCarousel");
+carousel.addEventListener("slid.bs.carousel", function () {
+  document.querySelectorAll('.carousel-caption h1').forEach(el => {
+    el.classList.remove("animate__animated", "animate__fadeInDown");
+    void el.offsetWidth; // trigger reflow
+    el.classList.add("animate__animated", "animate__fadeInDown");
+  });
+});
+
   const heroCarousel = document.querySelector('#heroCarousel');
   if (heroCarousel) {
     new bootstrap.Carousel(heroCarousel, {

@@ -12,6 +12,13 @@
   <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+  <!-- Animate.css -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet" />
+
+
 
   <!-- Custom CSS -->
     <link rel="stylesheet" href="style.css">
@@ -77,54 +84,106 @@
     </div>
 
 <!--home Start -->
-<div id="heroCarousel" class="carousel slide" data-bs-ride="carousel">
-  <div class="carousel-inner text-center align-items-center">
+<!-- Hero Section -->
+ <style>
+    /* Fullscreen carousel */
+    .carousel-item {
+      height: 100vh;
+      background-size: cover;
+      background-position: center;
+      position: relative;
+    }
 
-    <!-- Slide 1 -->
-    <div class="carousel-item active slide slide-1">
-      <div class="overlay"></div>
-      <div class="carousel-caption text-white">
-  
-        <p class="lead">
-          Protect yourself from misinformation with our advanced detection system.<br>
-          Real-time analysis powered by AI.
-        </p>
+    .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.6);
+      z-index: 1;
+    }
+
+    .carousel-caption {
+      z-index: 2;
+      color: white;
+      padding: 1rem;
+    }
+
+    .slide-1 {
+      background-image: url('/static/images/slide1.jpg');
+    }
+
+    .slide-2 {
+      background-image: url('/static/images/slide2.jpg');
+    }
+
+    .slide-3 {
+      background-image: url('/static/images/slide3.jpg');
+    }
+  </style>
+
+<section id="home">
+    <div id="heroCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
+      
+      <!-- Indicators -->
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active" aria-current="true"></button>
+        <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1"></button>
+        <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2"></button>
       </div>
-    </div>
 
-    <!-- Slide 2 -->
-    <div class="carousel-item slide slide-2">
-      <div class="overlay"></div>
-      <div class="carousel-caption text-white">
-         <p class="lead">
-          Submit any news content and get fast, reliable analysis.<br>
-          Know the truth before you share.
-        </p>
+      <!-- Slides -->
+      <div class="carousel-inner text-center">
+
+        <!-- Slide 1 -->
+        <div class="carousel-item active slide-1">
+          <div class="overlay"></div>
+          <div class="carousel-caption d-flex flex-column justify-content-center h-100">
+            <h1 class="display-4 fw-bold animate__animated animate__fadeInDown">Fight Fake News</h1>
+            <p class="lead animate__animated animate__fadeInUp animate__delay-1s">
+              Protect yourself from misinformation with our AI-powered system.
+            </p>
+          </div>
+        </div>
+
+        <!-- Slide 2 -->
+        <div class="carousel-item slide-2">
+          <div class="overlay"></div>
+          <div class="carousel-caption d-flex flex-column justify-content-center h-100">
+            <h1 class="display-4 fw-bold animate__animated animate__fadeInDown">Check News Instantly</h1>
+            <p class="lead animate__animated animate__fadeInUp animate__delay-1s">
+              Paste or select any news and get the truth in seconds.
+            </p>
+          </div>
+        </div>
+
+        <!-- Slide 3 -->
+        <div class="carousel-item slide-3">
+          <div class="overlay"></div>
+          <div class="carousel-caption d-flex flex-column justify-content-center h-100">
+            <h1 class="display-4 fw-bold animate__animated animate__fadeInDown">AI-Powered Accuracy</h1>
+            <p class="lead animate__animated animate__fadeInUp animate__delay-1s">
+              Reliable machine learning predictions you can trust.
+            </p>
+          </div>
+        </div>
       </div>
+
+      <!-- Controls -->
+      <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon"></span>
+      </button>
     </div>
+  </section>
 
-    <!-- Slide 3 -->
-    <div class="carousel-item slide slide-3">
-      <div class="overlay"></div>
-      <div class="carousel-caption text-white">
-        <p class="lead">
-          Backed by machine learning and data science.<br>
-          Accuracy you can trust.
-        </p>
-      </div>
-    </div>
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
-  </div>
 
-    <!-- Controls -->
-    <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
-      <span class="carousel-control-prev-icon"></span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
-      <span class="carousel-control-next-icon"></span>
-    </button>
-  </div>
-</section>
 <!--home End -->
 
 <!-- About Section Start -->
@@ -426,7 +485,7 @@ function checkSelectedNews() {
     </div>
     <hr class="border-dark" />
     <div class="text-center mt-3">
-      <p class="mb-0">&copy; 2025 <strong>Fake Finder</strong>. All rights reserved.</p>
+      <p class="mb-0">&copy; 2025 <strong>Fake Finder</strong> | Built by Geetanjali</p>
     </div>
   </div>
 </footer>
