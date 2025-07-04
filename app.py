@@ -18,6 +18,7 @@ def clean_text(text):
     text = re.sub(r"\s+", " ", text).strip()  # Normalize whitespace
     return text
 
+
 # Fetch latest news via NewsAPI
 NEWS_API_KEY = "b5263232c0ab4d71b2f909ff36259045"
 
@@ -79,6 +80,7 @@ def submit_form():
 
     # Show thank you page with user's name
     return render_template('thankyou.html', name=name)
+
 
 if __name__ == '__main__':
     app.run(debug=True)
